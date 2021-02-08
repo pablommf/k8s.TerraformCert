@@ -3,10 +3,10 @@ terraform {
   required_version = ">= 0.12"
 }
 provider "google" {
-  project     = "my-gcp-project"
-  credentials = file("gcp_auth_file")
-  region      = "gcp_region_1"
-  zone        = "gcp_zone_1"
+  project     = var.app_project
+  credentials = file(var.gcp_auth_file)
+  region      = var.gcp_region_1
+  zone        = var.gcp_zone_1
 }
 
 
