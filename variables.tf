@@ -4,6 +4,12 @@ variable "project_name" {
   description = "Project name"
 }
 
+# define the Devops authentication file
+variable "devops_auth_file" {
+  type = string
+  description = "DEVOPS authentication file"
+}
+
 # define the GCP authentication file
 variable "gcp_auth_file" {
   type = string
@@ -50,4 +56,42 @@ variable "subnet_cidr_1" {
 variable "firewall_rules_external_name" {
   type = string
   description = "Name of Firewall exterlnal rules"
+}
+
+# define controler count
+variable "controler_count" {
+  type = string
+  description = "Count of controler"
+}
+
+# define controler instance
+variable "controler_machine_type" {
+  type = string
+  description = "controler machine type"
+}
+
+# define controler instance image
+variable "controler_instance_image" {
+  type = string
+  description = "controler instance image"
+}
+
+
+
+# define worker count
+variable "worker_count" {
+  type = string
+  description = "Count of Workers"
+}
+
+# define worker instance
+variable "worker_machine_type" {
+  type = string
+  description = "worker machine type"
+}
+
+# define worker instance image
+variable "worker_instance_image" {
+  type = string
+  description = "worker instance image"
 }
