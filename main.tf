@@ -111,10 +111,10 @@ resource "google_compute_instance" "vm_worker_instance" {
     email  = "account-main@k8sterraformcert.iam.gserviceaccount.com"
     scopes = ["compute-rw","storage-ro","service-management","service-control","logging-write","monitoring"]
   }
+    metadata = {
+    ssh-keys = <<EOF
+      devops: file(var.devops_auth_file)
+    EOF
+  }
 }
 
-module "vm" {
-  source  = "terraform-google-modules/vm/google"
-  version = "6.0.0"
-  #create 3 masters and 3 workers
-}
